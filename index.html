@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Appointment Booking</h2>
+    <form action="send_email.php" method="post">
+        <label for="date">Select Date:</label><br>
+        <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+3 days')); ?>" required><br>
+        <label for="time">Select Time Slot:</label><br>
+        <select id="time" name="time" required>
+            <option value="">Select Time</option>
+            <option value="17:00-18:00">5:00 PM - 6:00 PM</option>
+            <option value="18:00-19:00">6:00 PM - 7:00 PM</option>
+            <option value="19:00-20:00">7:00 PM - 8:00 PM</option>
+            <option value="20:00-21:00">8:00 PM - 9:00 PM</option>
+        </select><br>
+        <label for="type">Type of Consultation:</label><br>
+        <select id="type" name="type" required>
+            <option value="">Select Type</option>
+            <option value="Personal">Personal</option>
+            <option value="Exam">Exam</option>
+            <option value="Career">Career</option>
+            <option value="Parent">Parent</option>
+        </select><br>
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <input type="submit" value="Confirm Appointment">
+    </form>
+</body>
+</html>
